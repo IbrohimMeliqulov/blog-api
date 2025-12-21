@@ -15,7 +15,7 @@ if (!host || !port || !password || !username || !database) {
   throw new Error("One or more database environment variables are missing");
 }
 
-const AppDataSource = new DataSource({
+export const AppDataSource = new DataSource({
   type: "postgres",
   host,
   port,

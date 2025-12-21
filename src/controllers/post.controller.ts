@@ -4,9 +4,11 @@ import { BaseController } from "./base.controller.js";
 import AppDataSource from "../config/database.js";
 import { ApiError } from "../middlewares/ApiError.js";
 import { PostService } from "../services/post.service.js";
+import { User } from "../entities/user.js";
 
 const postRepository = AppDataSource.getRepository(Post);
-const postService = new PostService(postRepository);
+const userRepository = AppDataSource.getRepository(User);
+const postService = new PostService(postRepository, userRepository);
 
 export class PostController extends BaseController<Post> {
   constructor() {

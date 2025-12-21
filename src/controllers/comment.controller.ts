@@ -4,9 +4,17 @@ import { BaseController } from "./base.controller.js";
 import AppDataSource from "../config/database.js";
 import { ApiError } from "../middlewares/ApiError.js";
 import { CommentService } from "../services/comment.service.js";
+import { User } from "../entities/user.js";
+import { Post } from "../entities/post.js";
 
 const commentRepository = AppDataSource.getRepository(Comment);
-const commentService = new CommentService(commentRepository);
+const userRepository = AppDataSource.getRepository(User);
+const postRepository = AppDataSource.getRepository(Post);
+const commentService = new CommentService(
+  commentRepository,
+  userRepository,
+  postRepository,
+);
 
 export class CommentController extends BaseController<Comment> {
   constructor() {

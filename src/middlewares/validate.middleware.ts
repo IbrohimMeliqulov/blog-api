@@ -7,10 +7,11 @@ export const validateFunction = (schema: ZodType<any>) => {
     const parseResult = schema.safeParse(req.body);
 
     if (!parseResult.success) {
-      const errors = parseResult.error.format();
-      return next(
-        ApiError.badRequest("Validation failed:" + JSON.stringify(errors)),
-      );
+      return res.status(400).json({
+        success: false,
+        message: "Validation failed",
+        errors: parseResult.error.flatten().fieldErrors,
+      });
     }
 
     req.body = parseResult.data;

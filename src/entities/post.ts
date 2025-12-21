@@ -6,7 +6,9 @@ import {
   JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  BeforeInsert,
 } from "typeorm";
+import { slugify } from "../utils/slugify.js";
 
 @Entity("posts")
 export class Post {
@@ -28,6 +30,11 @@ export class Post {
 
   @Column({ unique: true })
   slug!: string;
+
+  @BeforeInsert()
+  generateSlug() {
+    this.slug = slugify(this.title);
+  }
 
   @CreateDateColumn({ name: "created_at" })
   created_at!: Date;

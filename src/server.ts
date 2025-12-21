@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 dotenv.config();
 import AppDataSource from "./config/database.js";
 import app from "./app.js";
-// console.log(process.env.DB_HOST);
 const PORT = process.env.PORT;
 
 const startServer = async () => {

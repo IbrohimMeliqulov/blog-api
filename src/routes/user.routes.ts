@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { UserController } from "../controllers/user.controller.js";
+import { userController } from "../controllers/user.controller.js";
 
 const userRouter = Router();
-userRouter.get("/", UserController);
-userRouter.post("/", UserController.create);
-userRouter.get("/:id", UserController.findOne);
-userRouter.put("/:id", UserController.update);
-userRouter.delete("/:id", UserController.delete);
+userRouter.get("/", userController.findAll);
+userRouter.get("/search", userController.search);
+userRouter.get("/:id", userController.findOne);
+userRouter.get("/find-by-email", userController.findByEmail);
+userRouter.post("/", userController.create);
+userRouter.put("/:id", userController.update);
+userRouter.delete("/:id", userController.delete);
 
 export default userRouter;

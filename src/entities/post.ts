@@ -29,9 +29,6 @@ export class Post {
   @Column({ unique: true })
   slug!: string;
 
-  @Column({ default: 0 })
-  likes_count!: number;
-
   @CreateDateColumn({ name: "created_at" })
   created_at!: Date;
 

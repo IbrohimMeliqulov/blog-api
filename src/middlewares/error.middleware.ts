@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { ApiError } from "./ApiError.js";
 export const errorHandler = (
-  err: Error,
+  err: any,
   req: Request,
   res: Response,
   next: NextFunction,
@@ -11,6 +11,14 @@ export const errorHandler = (
       success: false,
       message: err.message,
       statusCode: err.statusCode,
+    });
+  }
+
+  if (err.code === "23505") {
+    return res.status(409).json({
+      success: false,
+      message: "Resource already exists",
+      statusCode: 409,
     });
   }
 

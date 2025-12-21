@@ -3,7 +3,7 @@ import { userController } from "../controllers/user.controller.js";
 
 const userRouter = Router();
 userRouter.get("/", userController.findAll);
-userRouter.get("/search", userController.search);
+userRouter.get("/search", userController.search.bind(userController));
 userRouter.get("/:id", userController.findOne);
 userRouter.get("/find-by-email", userController.findByEmail);
 userRouter.post("/", userController.create);

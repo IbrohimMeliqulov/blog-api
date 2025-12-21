@@ -10,21 +10,21 @@ export class CommentService extends BaseService<Comment> {
   }
 
   async createComment(data: Partial<Comment>): Promise<Comment> {
-    const author_idExists = await this.repository.findOne({
-      where: { author_id: data.author_id },
-    });
+    // const user = await this.repository.findOne({
+    //   where: { id: data.author_id },
+    // });
 
-    const post_idExists = await this.repository.findOne({
-      where: { post_id: data.post_id },
-    });
+    // const post = await this.repository.findOne({
+    //   where: { id: data.post_id },
+    // });
 
-    if (author_idExists) {
-      throw ApiError.notFound(`Resource with ID ${author_idExists} not found`);
-    }
+    // if (!user) {
+    //   throw ApiError.notFound(`User with ID ${user} not found`);
+    // }
 
-    if (post_idExists) {
-      throw ApiError.notFound(`Resource with ID ${post_idExists} not found`);
-    }
+    // if (!post) {
+    //   throw ApiError.notFound(`Post with ID ${post} not found`);
+    // }
     const comment = this.repository.create(data);
     return await this.repository.save(comment);
   }

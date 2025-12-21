@@ -71,7 +71,7 @@ export class BaseController<T extends { id: string }> {
     }
   }
 
-  async findOne(req: Request, res: Response, next: NextFunction) {
+  findOne = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { id } = req.params;
       const data = await this.service.findOne(id as string);
@@ -83,7 +83,7 @@ export class BaseController<T extends { id: string }> {
     } catch (err) {
       next(err);
     }
-  }
+  };
 
   delete = async (req: Request, res: Response, next: NextFunction) => {
     try {

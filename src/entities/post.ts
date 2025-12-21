@@ -20,10 +20,7 @@ export class Post {
 
   @ManyToOne("User", "posts", { onDelete: "CASCADE" })
   @JoinColumn({ name: "author_id" })
-  author!: any;
-
-  @Column()
-  author_id!: string;
+  author_id!: any;
 
   @Column("text")
   content!: string;

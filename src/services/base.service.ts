@@ -1,5 +1,5 @@
 import type { Repository, FindOptionsWhere, FindManyOptions } from "typeorm";
-import { Like, ILike } from "typeorm";
+import { ILike } from "typeorm";
 import { ApiError } from "../middlewares/ApiError.js";
 
 export interface PaginationResult<T> {
@@ -82,20 +82,6 @@ export class BaseService<T extends { id: string }> {
     };
   }
 
-  async search(keyword: string, options?: FindManyOptions<T>): Promise<T[]> {
-    if (!keyword || this.searchableFields.length === 0) {
-      return this.findAll(options);
-    }
-
-    const whereConditions = this.searchableFields.map((field) => ({
-      [field]: ILike(`%${keyword}%`),
-    }));
-
-    return await this.repository.find({
-      ...options,
-      where: whereConditions as any,
-    });
-  }
 
   async findOne(id: string): Promise<T> {
     const entity = await this.repository.findOne({

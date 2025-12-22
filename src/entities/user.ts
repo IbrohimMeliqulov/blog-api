@@ -9,6 +9,7 @@ import {
 
 @Entity({ name: "users" })
 export class User {
+  @Column({nullable: false})
   @PrimaryGeneratedColumn("uuid")
   id!: string;
 

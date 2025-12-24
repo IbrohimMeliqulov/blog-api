@@ -1,6 +1,6 @@
 Project name blog-api with  a REST API with Express, PostgreSQL, TypeOrm, and TypeScript
 -------------------------------------------------------------------------------------------
-Dependancies that must be installed in order to run the project:
+Install dependencies:
 ```bash
 npm install express typeorm pg bcrypt
 npm install -D typescript nodemon
@@ -30,11 +30,11 @@ In order to run the project:
 npm run dev
 ```
 Used Tech Stack:
-**Nodej**
-**Express**
-**TypeScript**
-**PostgreSQL**
-**TypeORM**
-**Zod(validation)**
-**bcrypt(password hashing)**
-**Luxon(date/time)**
+-Nodejs
+-Express
+-TypeScript
+-PostgreSQL
+-TypeORM
+-Zod(validation)
+-bcrypt(password hashing)
+-Luxon(date/time)

@@ -29,12 +29,14 @@ npm install -D typescript nodemon
 ```bash
 npm run dev
 ```
-##Used Tech Stack:
--Nodejs
--Express
--TypeScript
--PostgreSQL
--TypeORM
--Zod(validation)
--bcrypt(password hashing)
--Luxon(date/time)
+## Used Tech Stack
+
+- Node.js
+- Express
+- TypeScript
+- PostgreSQL
+- TypeORM
+- Zod (validation)
+- bcrypt (password hashing)
+- Luxon (date/time)
+

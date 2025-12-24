@@ -18,8 +18,8 @@ export class PostService extends BaseService<Post> {
       where: { id: data.author_id },
     });
 
-    if(!user){
-      throw ApiError.notFound(`User with ID ${user} not found`)
+    if (!user) {
+      throw ApiError.notFound(`User with ID ${user} not found`);
     }
     const post = this.repository.create(data);
     return await this.repository.save(post);

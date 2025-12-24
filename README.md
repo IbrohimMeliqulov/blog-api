@@ -11,18 +11,32 @@ npm install -D typescript nodemon
 ```
 ## tsconfig.json configuration:
 ```bash
-{
+ {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
+    "target": "es2020",
+    "types":["node"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "src",
+    "sourceMap":true,
+    "declaration":true,
+    "decalarationMap":true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
-  }
+  },
+"include":["src/**/*"]
 }
 ```
 ## In order to run the project:

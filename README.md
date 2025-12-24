@@ -1,6 +1,6 @@
 Project name blog-api with  a REST API with Express, PostgreSQL, TypeOrm, and TypeScript
 -------------------------------------------------------------------------------------------
-#Install dependencies:
+ ## Install dependencies:
 ```bash
 npm install express typeorm pg bcrypt
 npm install -D typescript nodemon

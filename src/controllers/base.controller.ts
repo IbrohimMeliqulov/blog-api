@@ -17,11 +17,11 @@ export class BaseController<T extends { id: string }> {
 
       const result = await this.service.findAllPaginated(page, limit);
 
-      const data=result.data.map((item:any)=>({
+      const data = result.data.map((item: any) => ({
         ...item,
-        created_at:formatTashkent(item.created_at),
-        updated_at:formatTashkent(item.updated_at)
-      }))
+        created_at: formatTashkent(item.created_at),
+        updated_at: formatTashkent(item.updated_at),
+      }));
 
       return res.status(200).json({
         success: true,
@@ -29,7 +29,6 @@ export class BaseController<T extends { id: string }> {
         data,
         pagination: result.pagination,
       });
-
     } catch (err) {
       next(err);
     }
@@ -63,7 +62,7 @@ export class BaseController<T extends { id: string }> {
     try {
       const { id } = req.params;
       const data = await this.service.findOne(id as string);
-      
+
       return res.status(200).json({
         success: true,
         message: "Data retrieved successfully",

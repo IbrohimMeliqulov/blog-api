@@ -82,7 +82,6 @@ export class BaseService<T extends { id: string }> {
     };
   }
 
-
   async findOne(id: string): Promise<T> {
     const entity = await this.repository.findOne({
       where: { id } as FindOptionsWhere<T>,

@@ -1,15 +1,15 @@
 Project name blog-api with  a REST API with Express, PostgreSQL, TypeOrm, and TypeScript
 -------------------------------------------------------------------------------------------
-Install dependencies:
+#Install dependencies:
 ```bash
 npm install express typeorm pg bcrypt
 npm install -D typescript nodemon
 ```
-This is TypeScript settings:
+#This is TypeScript settings:
 ```bash
 "dev": "tsc -w & nodemon dist/server.js"
 ```
-tsconfig.json configuration:
+#tsconfig.json configuration:
 ```bash
 {
   "compilerOptions": {
@@ -25,11 +25,11 @@ tsconfig.json configuration:
   }
 }
 ```
-In order to run the project:
+#In order to run the project:
 ```bash
 npm run dev
 ```
-Used Tech Stack:
+##Used Tech Stack:
 -Nodejs
 -Express
 -TypeScript

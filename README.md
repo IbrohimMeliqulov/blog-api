@@ -5,11 +5,11 @@ Project name blog-api with  a REST API with Express, PostgreSQL, TypeOrm, and Ty
 npm install express typeorm pg bcrypt
 npm install -D typescript nodemon
 ```
-#This is TypeScript settings:
+## This is TypeScript settings:
 ```bash
 "dev": "tsc -w & nodemon dist/server.js"
 ```
-#tsconfig.json configuration:
+## tsconfig.json configuration:
 ```bash
 {
   "compilerOptions": {
@@ -25,7 +25,7 @@ npm install -D typescript nodemon
   }
 }
 ```
-#In order to run the project:
+## In order to run the project:
 ```bash
 npm run dev
 ```
